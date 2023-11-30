@@ -1,0 +1,6 @@
+dags/explore.ipynb
+dags/columns_description.csv
+dags/P2M3_fauzan_risqullah_data_clean.csv
+dags/P2M3_fauzan_risqullah_data_from_postgres.csv
+dags/P2M3_fauzan_risqullah_data_raw.csv
+logs/*

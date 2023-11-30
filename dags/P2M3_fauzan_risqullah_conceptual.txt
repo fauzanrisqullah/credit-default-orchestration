@@ -1,0 +1,52 @@
+Conceptual Problems Answer
+
+1. NoSQL adalah istilah yang digunakan kepada database yang cara kerjanya tidak terikat dengan cara kerja database relasional tradisional (RDBMS).
+Dan database NoSQL ini dibangun dengan mengutamakan kemampuan untuk handling data bervolume besar dan mengedepankan model data yang lebih fleksibel dan scalable.
+
+2. Untuk menjawab pertanyaan ini kita harus mengetahui sifat - sifat dari databse NoSQL terlebih dahulu.
+    - Pertama
+        Database NoSQL biasanya tidak memiliki schema yang rigid, yang artinya data dapat dimasukkan ke database tanpa harus mendefinisikan strukturnya terlebih dahulu.
+        Dengan begitu, database NoSQL ini sangat cocok apabila digunakan untuk menyimpan data yang sangat dinamis dan mudah berubah dari segi strukturnya. Sedangkan
+        untuk RDBMS atau database yang memiliki schema yang fixed, lebih baik digunakan jika memang data tersebut tidak mudah berubah dari segi strukturnya, atau
+        bentuk data yang disimpan sangat ditekankan strukturnya yang artinya data wajib disimpan sesuai dengan struktur yang memang sudah didefinisikan. Biasanya data
+        yang dimaksud adalah seperti master data atau reference data yang memang sudah memiliki struktur yang jelas dan tidak mentolerir data yang tidak sesuai.
+    - Kedua
+        Database NoSQL didesain untuk memudahkan proses scaling secara horizontal, yang artinya databasenya dibangun untuk dapat dengan mudah di-upgrade untuk menambah
+        kemampuan atau performa dari database tersebut. Sehingga database NoSQL sangat cocok apabila memang ada tuntutan yang meminta agar data dapat memiliki skalabilitas
+        yang tinggi atau agar data harus dapat mentolerir kesalahan (fault tolerance) dan data harus dapat tersedia setiap saat (high availability).
+    - Ketiga
+        Pemilihan untuk penggunaan NoSQL atau RDBMS dapat dilihat dari use case yang dimiliki. Kemampuan utama NoSQL adalah data dapat disimpan tanpa harus terlalu memikirkan
+        relasi antar datanya, tidak seperti relational database yang memang mengutamakan relasi yang dimiliki oleh data. Dan kita mengetahui bahwa ciri dari relational
+        database ini sebenarnya memakan tenaga komputasi yang besar karena sistem harus memikirkan relasi yang dimiliki oleh data. Sehingga pada saat proses querying
+        dan terdapat join pada query tersebut, maka proses menjalankan query ini akan memakan banyak resource komputasi. Maka dari itu, untuk data yang memang sangat besar
+        sedangkan kita ingin melakukan analisis secara mendalam, maka kita dapat menggunakan database NoSQL. Seperti contohnya adalah dengan menggunakan graph database,
+        dimana database NoSQL ini menyimpan relasi antar data bersamaan dengan data itu sendiri, sehingga pada saat proses querying tidak perlu melakukan pendefinisian
+        relasi lagi (proses join). Sehingga database graph sangat cocok digunakan untuk proses analisis data yang sangat mendalam.
+
+3. Graph Database (Neo4j/Tigergraph)
+        Neo4j dan Tigergraph merupakan tool graph database, graph database sendiri adalah suatu database NoSQL yang menyimpan datanya dalam bentuk node dan edge, node sendiri
+        merepresentasikan suatu data atau entitas dan edge merepresentasikan relasi antar data. Keduanya disimpan bersamaan sehingga pada saat proses querying tidak
+        perlu lagi dilakukan pendefinisian relasi antar data. Ini adalah kemampuan utama dari graph database, dengan kemampuan ini graph database dapat digunakan untuk melakukan
+        analisis mendalam antar data dengan jauh lebih cepat jika dibangdingkan dengan relational database.
+   MongoDB
+        MongoDB adalah salah satu NoSQL database yang menyimpan data dalam bentuk document. Dan kelebihan yang dimiliki MongoDB ini adalah database ini tidak memiliki skema,
+        tidak seperti relational database pada umumnya. Ini menjadikan MongoDB sangat fleksibel untuk menyimpan data yang memang model datanya dinamis dari waktu ke waktu.
+        Kemudian MongoDB menawarkan kemampuan scalability yang sangat tinggi dimana MongoDB ini men-support proses sharding dimana data akan dipecah dan disimpan ke banyak
+        server lain sehingga memberikan kemampuan high availability untuk data tersebut.
+
+4. Apache Airflow adalah sebuah tool orchestration, orchestration disini artinya adalah automasi dari perpindahan data dari satu tempat ke tempat lain. Dengan Apache Airflow
+   kita dapat melakukan pendefinisian, scheduling dan memonitor arus perpindahan data dari satu tempat ke tujuannya.
+
+5. Great Expectations adalah library Python yang digunakan untuk membantu pengguna dalam me-maintain kualitas dari data. Dimana Great Expectations sendiri menyediakan framework
+   untuk melakukan pendefinisian dan pengetesan kualitas dari data.
+
+6. Batch processing adalah suatu metode pemrosesan data dalam bentuk set data yang sudah ditetapkan dalam satuan tertentu, dan biasanya data tersebut akan diproses dengan terikat
+   kepada schedule atau jadwal yang sudah ditetapkan sebelumnya.
+   Contoh:
+        Pada transaksi di pasar saham, biasanya data transaksi pembelian tiap broker atau bank sekuritas itu dapat diakses beberapa jam setelah pasar ditutup. Ini adalah contoh
+        penggunaan batch processing dimana sistem yang merekam transaksi di pasar saham merekam seluruh aktifitas transaksi dalam satu hari tersebut, dan tepat setelah pasar ditutup
+        maka sistem akan memproses untuk mengambil data jual - beli antar broker atau bank sekuritasnya. Dan biasanya data ini bisa mulai diakses beberapa jam setelah pasar ditutup,
+        karena pemrosesan data transaksi yang besar ini memang memerlukan banyak waktu, belum lagi data tersebut harus disebarkan ke banyak tempat agar nasabah dapat mengaksesnya.
+   Tools yang biasa digunakan untuk melakukan batch processing contohnya adalah Apache Airflow, contoh lainnya adalah tools ETL seperti Talend atau Pentaho yang dimana data dari
+   beragam sumber akan masuk ke dalam tools tersebut, kemudian dilakukan pemrosesan untuk berikutnya dikirimkan ke berbagai tempat. Meskipun tools ETL ini dapat memproses streaming
+   data namun biasanya tools ini digunakan untuk memproses data secara batch.
