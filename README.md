@@ -5,5 +5,5 @@ This project is related to the contruction of a data pipeline that connects a Po
 - Run `docker-compose -f airflow_ES.yaml up` on console to activate the pipeline.
 - Address List:
    - `localhost:8080` for **Airflow**
-   - `localhost:9200` for **ElasticSearch**
+   - `localhost:9200` for **Elasticsearch**
    - `localhost:5601` for **Kibana**
