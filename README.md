@@ -6,4 +6,4 @@ This project is related to the contruction of a data pipeline that connects a Po
 - Address List:
    - `localhost:8080` for **Airflow**
    - `localhost:9200` for **ElasticSearch**
-   - `localhost:5601` for **Airflow**
+   - `localhost:5601` for **Kibana**
